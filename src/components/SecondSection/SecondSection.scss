@@ -50,22 +50,6 @@ $text-font: "Work Sans", sans-serif;
   background-color: #fffcfa;
 }
 
-// .drag-handle {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   position: absolute;
-//   bottom: 55%;
-//   z-index: 9;
-//   opacity: 1;
-//   transition: opacity 0.3s ease;
-//   animation: popUp 0.3s ease-in-out forwards;
-// }
-
-// .drag-handle:hover {
-//   opacity: 0.2;
-// }
-
 .drag-handle {
   display: flex;
   align-items: center;
@@ -190,7 +174,6 @@ $text-font: "Work Sans", sans-serif;
         font-size: 1.5rem;
         font-family: $text-font;
         max-width: 748px;
-        padding: 20px;
         text-align: center;
         color: #7a7777;
       }
