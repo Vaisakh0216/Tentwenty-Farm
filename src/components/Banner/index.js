@@ -25,7 +25,7 @@ const BannerSlider = ({ images, autoplayInterval = 5000 }) => {
       {images.map((image, index) => (
         <div key={index} className="banner-container">
           <img
-            style={{ height: "900px" }}
+            style={{ height: "900px", objectFit: "cover" }}
             src={image}
             alt={`Banner ${index}`}
             className={

@@ -32,10 +32,16 @@ nav ul li a {
   font-size: 14px;
   font-weight: 400;
 }
+.icon-menu {
+  display: none;
+}
 
 @media (max-width: 767px) {
   nav {
     display: none;
+  }
+  .icon-menu {
+    display: block;
   }
   header {
     position: relative;

@@ -2,6 +2,7 @@ import React from "react";
 import "./header.scss";
 import { Button } from "@mui/material";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import MobileMenu from "../../../../assets/icons/responsiveMenu.png";
 
 const Header = ({ HeaderLabels }) => {
   return (
@@ -32,6 +33,7 @@ const Header = ({ HeaderLabels }) => {
       >
         Continue us
       </Button>
+      <img src={MobileMenu} className="icon-menu" />
     </header>
   );
 };
