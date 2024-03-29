@@ -64,7 +64,7 @@ const SecondSection = () => {
           justifyContent: "center",
         }}
       >
-        <div style={{ width: "100%", marginBottom: "100px" }}>
+        <div style={{ width: "100%" }}>
           <DraggablePhoto images={images} />
         </div>
       </div>

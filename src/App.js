@@ -3,11 +3,12 @@ import React from "react";
 import Header from "./components/Common/Header";
 import BannerSlider from "./components/Banner";
 import Banner from "../assets/images/Banner.png";
-import Second from "../assets/images/Second.png";
+import Second from "../assets/images/second.jpg";
+import Third from "../assets/images/third.jpg";
 import SecondSection from "./components/SecondSection";
 
 const App = () => {
-  const images = [Banner, Second];
+  const images = [Banner, Second, Third];
 
   const HeaderLabels = [
     "About",
