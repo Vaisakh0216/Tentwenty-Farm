@@ -1,4 +1,3 @@
-// MyComponent.js
 import React from "react";
 import Header from "./components/Common/Header";
 import BannerSlider from "./components/Banner";
@@ -19,7 +18,7 @@ const App = () => {
   ];
   return (
     <div>
-      <div style={{}}>
+      <div>
         <Header HeaderLabels={HeaderLabels} />
         <BannerSlider images={images} />
         <SecondSection images={images} />

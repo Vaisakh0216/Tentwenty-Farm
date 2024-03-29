@@ -7,11 +7,12 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 gsap.registerPlugin(Draggable);
 
-const CardCarousel = ({ images }) => {
+const DraggablePhoto = ({ images }) => {
   const isLargeScreen = useMediaQuery("(max-width: 767px)");
   const pickerRef = useRef(null);
   const cellsRef = useRef([]);
   const [transformedIndex, setTransformedIndex] = useState(2);
+  console.log("----->transformedIndex", transformedIndex);
 
   useEffect(() => {
     const picker = pickerRef.current;
@@ -56,9 +57,11 @@ const CardCarousel = ({ images }) => {
         x: snapX,
       },
       onDragEnd: function () {
-        const i = wrapIndex((-this.endX / wrapWidth) * cells.length - 5);
-        if (i === 0) {
-          setTransformedIndex(i);
+        const i = Math.round(
+          wrapIndex((-this.endX / wrapWidth) * cells.length - 5)
+        );
+        if (i + 1 === 6) {
+          setTransformedIndex((prevIndex) => prevIndex - prevIndex);
         } else {
           setTransformedIndex(i + 1);
         }
@@ -108,18 +111,6 @@ const CardCarousel = ({ images }) => {
 
   return (
     <div className="main">
-      <img
-        src={DragIcon}
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          position: "absolute",
-          bottom: "55%",
-          zIndex: 9,
-        }}
-      />
-
       <div ref={pickerRef} className="picker">
         {images.map((image, index) => (
           <div
@@ -127,6 +118,20 @@ const CardCarousel = ({ images }) => {
             ref={(el) => (cellsRef.current[index] = el)}
             className="cell"
           >
+            {Math.round(transformedIndex) === index && (
+              <img
+                src={DragIcon}
+                className="drag-handle"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  position: "absolute",
+                  bottom: "55%",
+                  zIndex: 9,
+                }}
+              />
+            )}
             <div className="cell-content">
               <img src={image.src} alt={`Image ${index + 1}`} />
               {Math.round(transformedIndex) === index && (
@@ -143,4 +148,4 @@ const CardCarousel = ({ images }) => {
   );
 };
 
-export default CardCarousel;
+export default DraggablePhoto;
